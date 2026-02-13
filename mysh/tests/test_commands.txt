@@ -1,0 +1,5 @@
+pwd
+echo Hello from mysh!
+ls
+help
+exit

@@ -1,0 +1,28 @@
+```
+# Executable
+mysh
+
+# Object files
+*.o
+obj/
+
+# Debug files
+*.dSYM/
+*.su
+*.idb
+*.pdb
+
+# Valgrind output
+vgcore.*
+
+# Editor files
+*.swp
+*.swo
+*~
+.vscode/
+.idea/
+
+# OS files
+.DS_Store
+Thumbs.db
+```
