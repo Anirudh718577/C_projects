@@ -7,8 +7,8 @@ typedef struct
 {
     uint8_t memory[4096];
     uint8_t V[16];
-    uint8_t I;
-    uint8_t pc;
+    uint16_t I;
+    uint16_t pc;
     uint16_t stack[16];
     uint8_t sp;
     uint8_t delay_timer;

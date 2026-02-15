@@ -1,6 +1,6 @@
 CC = gcc
 CFLAGS = -Wall -Wextra -Wpedantic -std=c99 -g
-LDFLAGS = -lSDL2
+LDFLAGS = -lraylib -lGL -lm -lpthread -ldl -lrt -lX11
 TARGET = chip8
 
 SRC_DIR = src
@@ -26,7 +26,7 @@ $(OBJ_DIR)/%.o: $(SRC_DIR)/%.c | $(OBJ_DIR)
 
 # Link object files to create executable
 $(TARGET): $(OBJS)
-	$(CC) $(LDFLAGS) $(OBJS) -o $(TARGET)
+	$(CC) $(OBJS) $(LDFLAGS) -o $(TARGET)
 
 # Clean build artifacts
 clean:
