@@ -17,6 +17,8 @@ int main(int argc, char **argv)
         return 1;
     }
 
+    srand(time(NULL));
+
     Chip8 cpu;
     chip8_init(&cpu);
 
@@ -42,6 +44,30 @@ int main(int argc, char **argv)
         if (cpu.sound_timer > 0)
             cpu.sound_timer--;
 
+        uint8_t keymap[16] = {
+            KEY_X,     // 0
+            KEY_ONE,   // 1
+            KEY_TWO,   // 2
+            KEY_THREE, // 3
+            KEY_Q,     // 4
+            KEY_W,     // 5
+            KEY_E,     // 6
+            KEY_A,     // 7
+            KEY_S,     // 8
+            KEY_D,     // 9
+            KEY_Z,     // A
+            KEY_C,     // B
+            KEY_FOUR,  // C
+            KEY_R,     // D
+            KEY_F,     // E
+            KEY_V      // F
+        };
+
+        for (int i = 0; i < 16; i++)
+        {
+            cpu.keypad[i] = IsKeyDown(keymap[i]);
+        }
+
         BeginDrawing();
         ClearBackground(BLACK);
 
@@ -59,15 +85,6 @@ int main(int argc, char **argv)
         EndDrawing();
     }
     CloseWindow();
-
-    // printf("%x\n", cpu.memory[cpu.pc] << 8);
-
-    // printf("\nFirst 10 ROM bytes at 0x200\n");
-    // for (int i = 0; i < 10; i++)
-    // {
-    //     printf("Opcode byte is %d: %02X\n", i, cpu.memory[0x200 + i]);
-    // }
-    // chip8_cycle(&cpu);
 
     return 0;
 }
