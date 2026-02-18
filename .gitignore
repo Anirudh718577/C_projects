@@ -1,0 +1,24 @@
+# Executable
+chip8
+
+# Object files
+*.o
+obj/
+
+# Debug files
+*.dSYM/
+*.su
+*.idb
+*.pdb
+
+# Valgrind output
+vgcore.*
+
+# Editor files
+*.swp
+*.swo
+*~
+
+# OS files
+.DS_Store
+Thumbs.db
